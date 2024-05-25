@@ -22,6 +22,10 @@ class TestCalc(unittest.TestCase):
             calc.add('1,-2,3,-4,5')
         self.assertEqual(str(context.exception), 'Negatives not allowed')
 
+    def test_new_lines_between_numbers(self):
+        self.assertEqual(calc.add('1\n2,3'), 6)
+        self.assertEqual(calc.add('10\n20,30'), 60)
+
 
 
 if __name__ == '__main__':
