@@ -17,6 +17,11 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(calc.add('1,2,3,4,5'), 15)
         self.assertEqual(calc.add('10,20,30,40,50'), 150)
 
+    def test_negative_numbers(self):
+        with self.assertRaises(ValueError) as context:
+            calc.add('1,-2,3,-4,5')
+        self.assertEqual(str(context.exception), 'Negatives not allowed')
+
 
 
 if __name__ == '__main__':
