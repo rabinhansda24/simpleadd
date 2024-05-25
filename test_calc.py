@@ -26,6 +26,10 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(calc.add('1\n2,3'), 6)
         self.assertEqual(calc.add('10\n20,30'), 60)
 
+    def test_custom_delimiter(self):
+        self.assertEqual(calc.add('//;\n1;2'), 3)
+        self.assertEqual(calc.add('//|\n10|20|30'), 60)
+
 
 
 if __name__ == '__main__':
