@@ -12,6 +12,10 @@ class TestCalc(unittest.TestCase):
     def test_two_numbers(self):
         self.assertEqual(calc.add('1,2'), 3)
         self.assertEqual(calc.add('10,20'), 30)
+    
+    def test_multiple_numbers(self):
+        self.assertEqual(calc.add('1,2,3,4,5'), 15)
+        self.assertEqual(calc.add('10,20,30,40,50'), 150)
 
 
 
