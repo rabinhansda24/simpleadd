@@ -30,6 +30,10 @@ class TestCalc(unittest.TestCase):
         self.assertEqual(calc.add('//;\n1;2'), 3)
         self.assertEqual(calc.add('//|\n10|20|30'), 60)
 
+    
+    def test_multiplication(self):
+        self.assertEqual(calc.add('//*\n2*3*2'), 12)
+
 
 
 if __name__ == '__main__':

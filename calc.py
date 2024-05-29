@@ -4,6 +4,8 @@ def add(numbers):
     if not numbers:
         return 0
     
+    
+    delimiter = None
     #habdle new lines and custom delimiters
     if numbers.startswith('//'):
         delimiter, numbers = numbers.split('\n', 1)
@@ -18,6 +20,13 @@ def add(numbers):
     if any(n < 0 for n in numbers):
         raise ValueError('Negatives not allowed')
 
-    return sum(numbers)
+    if delimiter == '*':
+        product = 1
+        for el in numbers:
+            product = product * el
+        
+        return product
+    else:
+        return sum(numbers)
 
 # Path: test_calc.py
